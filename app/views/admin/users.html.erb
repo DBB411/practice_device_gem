@@ -1,0 +1,28 @@
+<h1>
+This is Admin page
+</h1>
+
+<h3>Users(<%= @users.count%>)</h3>
+
+<table>
+  <thead>
+    <td style="padding: 0.5rem;">Id</td>
+    <td style="padding: 0.5rem;">Name</td>
+    <td style="padding: 0.5rem;">Email</td>
+    <td style="padding: 0.5rem;">Is enrolled</td>
+    <td style="padding: 0.5rem;">Enrolled at</td>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td style="padding: 0.5rem;"><%= user.id %></td>
+        <td style="padding: 0.5rem;"><%= user.name %></td>
+        <td style="padding: 0.5rem;"><%= user.email %></td>
+        <td style="padding: 0.5rem;"><%= user.is_enrolled %></td>
+        <td style="padding: 0.5rem;"><%= user.enrolled_at %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>

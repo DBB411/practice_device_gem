@@ -1,0 +1,7 @@
+<h1>Confirm enrollment</h1>
+<p><%= @current_user.email %> are you sure you want to enroll.</p>
+<br>
+<br>
+<br>
+
+<%= link_to 'Cancle', request.referer %> or <%= link_to 'Confirm enroll', user_add_enrollment_add_enrollment_path, method: :put%>

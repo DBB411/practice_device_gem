@@ -1,0 +1,30 @@
+<h1>Your details</h1>
+<% if @current_user.present? %>
+  <p><%= "Hi, #{@current_user.email}" %></p>
+  <br>
+  Enrolled: <%= "#{@current_user.is_enrolled}  at: #{@current_user.enrolled_at}" %>
+<% else %>
+  You are not logged in.
+<% end %>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<%= link_to 'Enroll', user_add_enrollment_confirm_enrollment_path, method: :get %>
+<br>
+<br>
+<br>
+<br>
+<% if @current_user.present? %>
+You can enroll
+<br>
+<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+<% else %>
+You need to log in before enrolling <br>
+<%= link_to 'Log in', new_user_session_path, method: :get %> or <%= link_to 'Sign up', new_user_registration_path, method: :get %>
+<% end %>
